@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>
+        PWA APP
+    </title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="script/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    <script lenguaje="JavaScript">
+        //Estabelcemos una funcion sfondo con un parametro, luego agregamos document.bgColor
+        //cambiar de color el documento
+        function sfondo(color) {
+            document.bgColor = color;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+
+        <input type="button" value="Rojo" onClick="sfondo('RED')">
+        <input type="button" value="Azul" onClick="sfondo('BLUE')">
+        <input type="button" value="Anaranjado" onClick="sfondo('ORANGE')">
+        <input type="button" value="Verde" onClick="sfondo('GREEN')">
+        <input type="button" value="Negro" onClick="sfondo('BLACK')">
+        <input type="button" value="Gris" onClick="sfondo('GRAY')">
+        <input type="button" value="Amarillo" onClick="sfondo('YELLOW')">
+        <input type="button" value="Blanco" onClick="sfondo('WHITE')">
+    </form>
+</body>
+
+</html>
